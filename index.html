@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+
+    <meta name="theme-color" content="#07111d" />
+
+    <title>Football Owner</title>
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- =====================================================
+         GLOBAL BACKGROUND
+    ====================================================== -->
+
+    <div class="bg">
+        <div class="bg-glow bg-glow-1"></div>
+        <div class="bg-glow bg-glow-2"></div>
+        <div class="bg-glow bg-glow-3"></div>
+
+        <div class="bg-grid"></div>
+        <div class="bg-noise"></div>
+    </div>
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div id="toastRoot"></div>
+
+
+    <!-- =====================================================
+         START SCREEN
+    ====================================================== -->
+
+    <section
+        id="startScreen"
+        class="start-screen"
+    >
+
+        <div class="start-shell">
+
+            <div class="start-brand">
+
+                <div class="start-brand-logo">
+                    ⚽
+                </div>
+
+                <div>
+                    <div class="start-brand-title">
+                        FOOTBALL OWNER
+                    </div>
+
+                    <div class="start-brand-subtitle">
+                        CLUB MANAGEMENT SIMULATOR
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="start-content">
+
+                <div class="start-left">
+
+                    <div class="eyebrow">
+                        OWNER CENTRE
+                    </div>
+
+                    <h1>
+                        Build.
+                        <span>Manage.</span>
+                        Dominate.
+                    </h1>
+
+                    <p>
+                        Start from the bottom of English football.
+                        Build your squad, discover young talent,
+                        negotiate sponsors, make transfers and
+                        take your club all the way to the top.
+                    </p>
+
+
+                    <div class="start-actions">
+
+                        <button
+                            id="newGameBtn"
+                            class="btn btn-primary"
+                        >
+                            <span>＋</span>
+                            <span>Start New Career</span>
+                        </button>
+
+                        <button
+                            id="openLoadBtn"
+                            class="btn btn-secondary"
+                        >
+                            <span>↻</span>
+                            <span>Load Career</span>
+                        </button>
+
+                    </div>
+
+
+                    <div class="start-features">
+
+                        <div>
+                            <strong>5</strong>
+                            <span>DIVISIONS</span>
+                        </div>
+
+                        <div class="feature-line"></div>
+
+                        <div>
+                            <strong>2</strong>
+                            <span>MAJOR CUPS</span>
+                        </div>
+
+                        <div class="feature-line"></div>
+
+                        <div>
+                            <strong>∞</strong>
+                            <span>CAREERS</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================================
+                     START SCREEN VISUAL
+                ========================================== -->
+
+                <div class="start-visual">
+
+                    <div class="visual-ring visual-ring-1"></div>
+                    <div class="visual-ring visual-ring-2"></div>
+
+
+                    <div class="visual-stadium">
+
+                        <div class="stadium-sky">
+
+                            <div class="moon"></div>
+
+                            <div class="light-beam beam-1"></div>
+                            <div class="light-beam beam-2"></div>
+                            <div class="light-beam beam-3"></div>
+
+                        </div>
+
+
+                        <div class="stadium-crowd"></div>
+
+
+                        <div class="stadium-pitch">
+
+                            <div class="pitch-line pitch-mid"></div>
+                            <div class="pitch-circle"></div>
+
+                            <div class="pitch-box pitch-box-left"></div>
+                            <div class="pitch-box pitch-box-right"></div>
+
+                            <div class="pitch-player p1"></div>
+                            <div class="pitch-player p2"></div>
+                            <div class="pitch-player p3"></div>
+                            <div class="pitch-player p4"></div>
+                            <div class="pitch-player p5"></div>
+
+                            <div class="pitch-ball">
+                                ⚽
+                            </div>
+
+                        </div>
+
+
+                        <div class="visual-scoreboard">
+
+                            <div class="score-team">
+                                <span>YOUR CLUB</span>
+                                <strong>01</strong>
+                            </div>
+
+                            <div class="score-middle">
+                                <strong>86:42</strong>
+                                <span>LIVE SIM</span>
+                            </div>
+
+                            <div class="score-team right">
+                                <span>RIVALS FC</span>
+                                <strong>00</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="float-stat float-stat-left">
+
+                        <div class="float-icon green">
+                            ↗
+                        </div>
+
+                        <div>
+                            <span>CLUB VALUE</span>
+                            <strong>+£2.8M</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="float-stat float-stat-right">
+
+                        <div class="float-icon blue">
+                            ★
+                        </div>
+
+                        <div>
+                            <span>REPUTATION</span>
+                            <strong>72</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         NEW GAME MODAL
+    ====================================================== -->
+
+    <div
+        id="newGameModal"
+        class="modal hidden"
+    >
+
+        <div
+            class="modal-backdrop"
+            data-close="newGameModal"
+        ></div>
+
+
+        <div class="modal-card">
+
+            <div class="modal-header">
+
+                <div>
+                    <div class="eyebrow">
+                        NEW CAREER
+                    </div>
+
+                    <h2>
+                        Create Your Club
+                    </h2>
+
+                    <p>
+                        Create your owner identity and
+                        choose where your story begins.
+                    </p>
+                </div>
+
+
+                <button
+                    class="icon-btn"
+                    data-close="newGameModal"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="form-section-title">
+                OWNER
+            </div>
+
+
+            <div class="form-grid">
+
+                <label class="form-control">
+
+                    <span>Owner Name</span>
+
+                    <input
+                        id="ownerNameInput"
+                        type="text"
+                        maxlength="28"
+                        value="Danish"
+                        placeholder="Owner name"
+                    />
+
+                </label>
+
+
+                <label class="form-control">
+
+                    <span>Owner Type</span>
+
+                    <select id="ownerTypeInput">
+
+                        <option value="investor">
+                            Investor
+                        </option>
+
+                        <option value="passionate">
+                            Passionate Owner
+                        </option>
+
+                        <option value="business">
+                            Business Owner
+                        </option>
+
+                        <option value="risk">
+                            Risk Taker
+                        </option>
+
+                    </select>
+
+                </label>
+
+            </div>
+
+
+            <div class="form-section-title">
+                CLUB IDENTITY
+            </div>
+
+
+            <div class="form-grid">
+
+                <label class="form-control">
+
+                    <span>Club Name</span>
+
+                    <input
+                        id="clubNameInput"
+                        type="text"
+                        maxlength="30"
+                        value="Como"
+                        placeholder="Club name"
+                    />
+
+                </label>
+
+
+                <label class="form-control">
+
+                    <span>City</span>
+
+                    <input
+                        id="clubCityInput"
+                        type="text"
+                        maxlength="24"
+                        value="London"
+                        placeholder="London"
+                    />
+
+                </label>
+
+
+                <label class="form-control">
+
+                    <span>Short Name</span>
+
+                    <input
+                        id="clubShortInput"
+                        type="text"
+                        maxlength="5"
+                        value="COM"
+                        placeholder="COM"
+                    />
+
+                </label>
+
+
+                <label class="form-control">
+
+                    <span>Starting Division</span>
+
+                    <select id="startDivisionInput">
+
+                        <option value="5">
+                            Division 5 — National League
+                        </option>
+
+                        <option value="4">
+                            Division 4 — League Two
+                        </option>
+
+                        <option value="3">
+                            Division 3 — League One
+                        </option>
+
+                        <option value="2">
+                            Division 2 — Championship
+                        </option>
+
+                        <option value="1">
+                            Division 1 — Premier League
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <label class="form-control">
+
+                    <span>Primary Colour</span>
+
+                    <div class="color-picker">
+
+                        <input
+                            id="primaryColorInput"
+                            type="color"
+                            value="#5965f2"
+                        />
+
+                    </div>
+
+                </label>
+
+
+                <label class="form-control">
+
+                    <span>Secondary Colour</span>
+
+                    <div class="color-picker">
+
+                        <input
+                            id="secondaryColorInput"
+                            type="color"
+                            value="#0b1320"
+                        />
+
+                    </div>
+
+                </label>
+
+            </div>
+
+
+            <div
+                id="starterNote"
+                class="starter-note"
+            >
+            </div>
+
+
+            <button
+                id="createGameBtn"
+                class="btn btn-primary btn-large full"
+            >
+                <span>Enter The Football World</span>
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOAD CAREER
+    ====================================================== -->
+
+    <div
+        id="loadModal"
+        class="modal hidden"
+    >
+
+        <div
+            class="modal-backdrop"
+            data-close="loadModal"
+        ></div>
+
+
+        <div class="modal-card modal-save">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <div class="eyebrow">
+                        CAREER FILES
+                    </div>
+
+                    <h2>
+                        Load Career
+                    </h2>
+
+                    <p>
+                        Continue an existing career.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="icon-btn"
+                    data-close="loadModal"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div
+                id="saveList"
+                class="save-list"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MAIN GAME APPLICATION
+    ====================================================== -->
+
+    <div
+        id="app"
+        class="app hidden"
+    >
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-inner">
+
+
+                <!-- BRAND -->
+
+                <div class="sidebar-brand">
+
+                    <div
+                        id="sidebarLogo"
+                        class="sidebar-logo"
+                    >
+                        COM
+                    </div>
+
+                    <div class="sidebar-brand-text">
+
+                        <strong>
+                            FOOTBALL OWNER
+                        </strong>
+
+                        <span id="sideClubName">
+                            Como
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="sidebar-divider"></div>
+
+
+                <!-- NAVIGATION -->
+
+                <nav class="sidebar-nav">
+
+
+                    <div class="nav-group">
+
+                        <div class="nav-group-label">
+                            MANAGEMENT
+                        </div>
+
+
+                        <button
+                            class="nav-item active"
+                            data-tab="dashboard"
+                        >
+
+                            <span class="nav-icon">
+                                ⌂
+                            </span>
+
+                            <span>
+                                Dashboard
+                            </span>
+
+                            <i class="nav-dot"></i>
+
+                        </button>
+
+
+                        <button
+                            class="nav-item"
+                            data-tab="squad"
+                        >
+
+                            <span class="nav-icon">
+                                ◈
+                            </span>
+
+                            <span>
+                                Squad
+                            </span>
+
+                            <i class="nav-dot"></i>
+
+                        </button>
+
+
+                        <button
+                            class="nav-item"
+                            data-tab="transfers"
+                        >
+
+                            <span class="nav-icon">
+                                ⇄
+                            </span>
+
+                            <span>
+                                Transfers
+                            </span>
+
+                            <i class="nav-dot"></i>
+
+                        </button>
+
+
+                        <button
+                            class="nav-item"
+                            data-tab="scouting"
+                        >
+
+                            <span class="nav-icon">
+                                ⌕
+                            </span>
+
+                            <span>
+                                Scouting
+                            </span>
+
+                            <i class="nav-dot"></i>
+
+                        </button>
+
+
+                        <button
+                            class="nav-item"
+                            data-tab="academy"
+                        >
+
+                            <span class="nav-icon">
+                                ✦
+                            </span>
+
+                            <span>
+                                Academy
+                            </span>
+
+                            <i class="nav-dot"></i>
+
+                        </button>
+
+
+                        <button
+                            class="nav-item"
+                            data-tab="staff"
+                        >
+
+                            <span class="nav-icon">
+                                ◎
+                            </span>
+
+                            <span>
+                                Staff
+                            </span>
+
+                            <i class="nav-dot"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="nav-group">
+
+                        <div class="nav-group-label">
+                            BUSINESS
+                        </div>
+
+
+                        <button
+                            class="nav-item"
+                            data-tab="sponsors"
+                        >
+
+                            <span class="nav-icon">
+                                ◆
+                            </span>
+
+                            <span>
+                                Sponsors
+                            </span>
+
+                            <i class="nav-dot"></i>
+
+                        </button>
+
+
+                        <button
+                            class="nav-item"
+                            data-tab="club"
+                        >
+
+                            <span class="nav-icon">
+                                ▦
+                            </span>
+
+                            <span>
+                                Club & Finance
+                            </span>
+
+                            <i class="nav-dot"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="nav-group">
+
+                        <div class="nav-group-label">
+                            FOOTBALL
+                        </div>
+
+
+                        <button
+                            class="nav-item"
+                            data-tab="competitions"
+                        >
+
+                            <span class="nav-icon">
+                                ♜
+                            </span>
+
+                            <span>
+                                Competitions
+                            </span>
+
+                            <i class="nav-dot"></i>
+
+                        </button>
+
+
+                        <button
+                            class="nav-item"
+                            data-tab="inbox"
+                        >
+
+                            <span class="nav-icon">
+                                ✉
+                            </span>
+
+                            <span>
+                                Inbox
+                            </span>
+
+                            <i class="nav-dot"></i>
+
+                        </button>
+
+                    </div>
+
+                </nav>
+
+
+                <!-- SIDEBAR BOTTOM -->
+
+                <div class="sidebar-bottom">
+
+
+                    <div class="club-status-mini">
+
+                        <div class="club-status-label">
+
+                            <span class="live-dot"></span>
+
+                            CLUB STATUS
+
+                        </div>
+
+
+                        <div class="club-status-main">
+
+                            <strong id="seasonLabel">
+                                2026/27
+                            </strong>
+
+                            <span id="dateLabel">
+                                Pre-season
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        id="saveOpenBtn"
+                        class="save-button"
+                    >
+
+                        <span>
+                            ▣
+                        </span>
+
+                        Save / Load
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- TOPBAR -->
+
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <div
+                        id="pageEyebrow"
+                        class="eyebrow"
+                    >
+                        OWNER CENTRE
+                    </div>
+
+                    <h1 id="pageTitle">
+                        Dashboard
+                    </h1>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+
+                    <div class="live-career">
+
+                        <span class="live-dot"></span>
+
+                        LIVE CAREER
+
+                    </div>
+
+
+                    <div class="cash-widget">
+
+                        <span>
+                            AVAILABLE CASH
+                        </span>
+
+                        <strong id="cashTop">
+                            £0
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        id="advanceBtn"
+                        class="advance-button"
+                    >
+
+                        <span>
+                            ▶
+                        </span>
+
+                        Advance Week
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- PAGE ROOT -->
+
+            <section
+                id="pageRoot"
+                class="page-root"
+            >
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MATCHDAY CINEMATIC OVERLAY
+    ====================================================== -->
+
+    <div
+        id="matchdayOverlay"
+        class="matchday-overlay hidden"
+        aria-hidden="true"
+    >
+
+        <div class="matchday-backdrop"></div>
+
+
+        <div class="matchday-card">
+
+
+            <div class="matchday-topbar">
+
+                <div>
+
+                    <div
+                        id="matchdayRound"
+                        class="matchday-round"
+                    >
+                        MATCHWEEK
+                    </div>
+
+                    <span>
+                        MATCH CENTRE
+                    </span>
+
+                </div>
+
+
+                <div class="matchday-live">
+                    <span class="live-dot"></span>
+                    LIVE
+                </div>
+
+            </div>
+
+
+            <div
+                id="matchdayContent"
+                class="matchday-content"
+            >
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         GENERIC MODAL
+    ====================================================== -->
+
+    <div
+        id="genericModal"
+        class="modal hidden"
+    >
+
+        <div
+            class="modal-backdrop"
+            data-close="genericModal"
+        ></div>
+
+
+        <div
+            id="genericModalContent"
+            class="modal-card modal-generic"
+        >
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         REQUIRED HIDDEN MANUAL SAVE FIELD
+         app.js expects this ID
+    ====================================================== -->
+
+    <input
+        id="manualSaveName"
+        type="hidden"
+        value=""
+    />
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="app.js"></script>
+
+</body>
+</html>
